@@ -12,7 +12,7 @@ class Article {
     // explicit binding
     this.expandButton.addEventListener('click', this.expandArticle.bind(this));
 
-    // not explicit binding
+    // not explicit binding, doesn't work
     // this.expandButton.addEventListener('click', () => expandArticle());
   }
 

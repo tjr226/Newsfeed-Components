@@ -21,11 +21,40 @@ class Article {
     this.article.classList.toggle('article-open');
     // this.expandButton.style.display = 'None';
     if (this.expandButton.textContent == 'Expand') {
-      this.expandButton.textContent = "Close";
+      this.expandButton.textContent = "Close and Hide";
     } else {
       this.article.style.display = 'None';
     }
   }
+
+  createArticle(formEntry) {
+    // heading text set from HTML form
+    this.articleHeading = formEntry.articleHeading,
+    // date of publication set to when the form is entered
+    this.date = new Date(),
+    // article text set from HTML form, let's pretend no newlines allowed
+    this.articleText = formEntry.articleText;
+
+    let newDiv = document.createElement('div');
+    
+    let newHeader = document.createElement('h2');
+    let headerNode = document.createTextNode(newHeader);
+    newDiv.appendChild(headerNode);
+
+    let newDate = document.createElement('p');
+    let dateNode = document.createTextNode(newDate);
+    newDiv.appendChild(dateNode);
+
+    let newText = document.createElement('p');
+    let textNode = document.createTextNode(newText);
+    newDiv.appendChild(textNode);
+
+    let articles = document.querySelector('.articles');
+    articles.appendChild(newDiv);
+    
+  }
+
+
 }
 
 /* START HERE: 
